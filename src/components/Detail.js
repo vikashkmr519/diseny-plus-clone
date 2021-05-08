@@ -15,7 +15,9 @@ function Detail() {
       .then((doc) => {
         if (doc.exists) {
           //save the movie data
+
           setMovie(doc.data());
+          console.log("doc.data", movie);
         } else {
           //redirect to home page
         }

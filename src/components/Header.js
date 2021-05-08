@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import {
   selectUserName,
   selectUserPhoto,
@@ -54,7 +54,10 @@ function Header() {
   };
   return (
     <Nav>
-      <Logo src="/images/logo.svg" />
+      <Link to="/">
+        <Logo src="/images/logo.svg" />
+      </Link>
+
       {!userName ? (
         <LoginContainer>
           <Login onClick={signIn}>Login</Login>
@@ -62,7 +65,7 @@ function Header() {
       ) : (
         <>
           <NavMenu>
-            <a>
+            <a href="/">
               <img src="/images/home-icon.svg" />
               <span>HOME</span>
             </a>
@@ -112,6 +115,7 @@ const Nav = styled.nav`
 
 const Logo = styled.img`
   width: 80px;
+  cursor: pointer;
 `;
 
 const NavMenu = styled.div`
@@ -125,6 +129,8 @@ const NavMenu = styled.div`
     align-items: center;
     padding: 0 12px;
     cursor: pointer;
+    color: white;
+    text-decoration: none;
 
     img {
       height: 20px;
