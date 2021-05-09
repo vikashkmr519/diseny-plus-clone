@@ -91,8 +91,10 @@ function Header() {
             </a>
 
             <a>
-              <img src="/images/series-icon.svg" />
-              <span>SERIES</span>
+              <Link to="/series">
+                <img src="/images/series-icon.svg" />
+                <span>SERIES</span>
+              </Link>
             </a>
           </NavMenu>
           <UserImg onClick={signOut} src={userPhoto} />
